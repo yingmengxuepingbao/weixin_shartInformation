@@ -1,0 +1,61 @@
+{
+  "pages": [
+    "pages/index/index", 
+    "pages/logs/logs",
+    "pages/test/test",
+    "pages/personalInformation/personalInformation",
+    "pages/informationAudit/informationAudit",
+    "pages/informationPublishList/informationPublishList",
+    "pages/informationRelease/informationRelease",
+    "pages/myPublish/myPublish"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#39b5de",
+    "navigationBarTitleText": "首页",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#eceff4"
+  },
+  "tabBar": {
+    "color": "",
+    "selectedColor": "#55CAAA",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "image/shouye/home.png",
+        "selectedIconPath": "image/shouye/home_hort.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/informationRelease/informationRelease",
+        "iconPath": "image/shouye/wode.png",
+        "selectedIconPath": "image/shouye/wode_hort.png",
+        "text": "信息发布"
+      },
+      {
+        "pagePath": "pages/informationAudit/informationAudit",
+        "iconPath": "image/shouye/wode.png",
+        "selectedIconPath": "image/shouye/wode_hort.png",
+        "text": "信息审核"
+      },
+      {
+        "pagePath": "pages/myPublish/myPublish",
+        "iconPath": "image/shouye/wode.png",
+        "selectedIconPath": "image/shouye/wode_hort.png",
+        "text": "我的发布"
+      },
+      {
+        "pagePath": "pages/personalInformation/personalInformation",
+        "iconPath": "image/shouye/wode.png",
+        "selectedIconPath": "image/shouye/wode_hort.png",
+        "text": "个人中心"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true,
+  "sitemapLocation": "sitemap.json"
+}
