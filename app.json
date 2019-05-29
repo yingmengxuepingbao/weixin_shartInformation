@@ -1,4 +1,4 @@
-{
+﻿{
   "pages": [
     "pages/index/index", 
     "pages/logs/logs",
@@ -28,20 +28,20 @@
       },
       {
         "pagePath": "pages/informationRelease/informationRelease",
-        "iconPath": "image/shouye/wode.png",
-        "selectedIconPath": "image/shouye/wode_hort.png",
+        "iconPath": "image/shouye/xinxi.png",
+        "selectedIconPath": "image/shouye/xinxi_hort.png",
         "text": "信息发布"
       },
       {
         "pagePath": "pages/informationAudit/informationAudit",
-        "iconPath": "image/shouye/wode.png",
-        "selectedIconPath": "image/shouye/wode_hort.png",
+        "iconPath": "image/shouye/shenpi.png",
+        "selectedIconPath": "image/shouye/shenpi_hort.png",
         "text": "信息审核"
       },
       {
         "pagePath": "pages/myPublish/myPublish",
-        "iconPath": "image/shouye/wode.png",
-        "selectedIconPath": "image/shouye/wode_hort.png",
+        "iconPath": "image/shouye/wy.png",
+        "selectedIconPath": "image/shouye/wy_hort.png",
         "text": "我的发布"
       },
       {
