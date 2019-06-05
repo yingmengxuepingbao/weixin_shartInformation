@@ -10,6 +10,35 @@ App({
     wx.login({
       success: res => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
+        // ------ 获取凭证 ------
+        var code = res.code;//返回code
+        console.log('获取用户登录凭证：' + code);
+        if (code ) {
+          var appId = 'wxabd856ad2fb9b20d';
+          var secret = '7d58aee4f9345887c336bdff1806cffe';
+          wx.request({
+            url: 'https://api.weixin.qq.com/sns/jscode2session?appid=' + appId + '&secret=' + secret + '&js_code=' + code + '&grant_type=authorization_code',
+            data: {},
+            header: {
+              'content-type': 'json'
+            },
+            success: function (res) {
+              if (res.statusCode == 200) {
+                console.log(res.statusCode);
+                 console.log("获取到的openid为：" + res.data)
+                var openid = res.data.openid //返回openid
+                console.log("openid = " + openid)
+                // that.globalData.openid = res.data
+                wx.setStorageSync('openid', res.data)
+                console.log("调用方法" + JSON.stringify(res.data))
+              } else {
+                console.log(res.errMsg)
+              }
+            }
+          })
+        } else {
+          console.log('获取用户登录失败：' + res.errMsg);
+        }
       }
     })
     // 获取用户信息

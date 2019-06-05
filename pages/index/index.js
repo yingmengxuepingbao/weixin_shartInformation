@@ -5,13 +5,12 @@ const app = getApp()
 Page({
   onReachBottom: function () {
     this.data.pageNum++;
-    this.requestData();
+    //this.requestData();
     console.log("刷新")
   },
   onPullDownRefresh: function () {
     this.data.pageNum = 1;
-    this.requestData();
-
+    //this.requestData();
     console.log("上啦")
   },
   /**
@@ -26,7 +25,7 @@ Page({
     imgUrls: ['../../image/lunbo/1.jpg',
      '../../image/lunbo/2.jpg',
      '../../image/lunbo/3.jpg'],
-    link: '/pages/detail/detail',
+    link: '/pages/informationPublishList/informationPublishList',
     pageNum: 0,
     listData: [],
     imageUrl: [],
@@ -34,7 +33,7 @@ Page({
   //点击轮播图
   swiperTap: function (even) {
     wx.navigateTo({
-      url: '../detail/detail'
+      url: '../informationPublishList/informationPublishList'
     })
   },
   //事件处理函数
@@ -43,6 +42,9 @@ Page({
       url: '../logs/logs'
     })
   },
+   /**
+   * 生命周期函数--监听页面加载
+   */
   onLoad: function () {
     if (app.globalData.userInfo) {
       this.setData({
@@ -70,6 +72,47 @@ Page({
         }
       })
     }
+  },
+  /**
+ * 生命周期函数--监听页面初次渲染完成
+ */
+  onReady: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload: function () {
+
+  },
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
+
+  },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {
+
   },
   getUserInfo: function(e) {
     console.log(e)

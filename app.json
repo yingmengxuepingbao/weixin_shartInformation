@@ -1,4 +1,4 @@
-﻿{
+{
   "pages": [
     "pages/index/index", 
     "pages/logs/logs",
@@ -40,8 +40,8 @@
       },
       {
         "pagePath": "pages/myPublish/myPublish",
-        "iconPath": "image/shouye/wy.png",
-        "selectedIconPath": "image/shouye/wy_hort.png",
+        "iconPath": "image/shouye/my.png",
+        "selectedIconPath": "image/shouye/my_hort.png",
         "text": "我的发布"
       },
       {

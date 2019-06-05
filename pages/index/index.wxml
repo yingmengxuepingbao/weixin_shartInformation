@@ -7,12 +7,18 @@
         autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">  
       <block wx:for="{{imgUrls}}">  
         <swiper-item>  
-           <navigator url='../detail/detail' hover-class="navigator-hover">  
+           <navigator url='../informationPublishList/informationPublishList' hover-class="navigator-hover">  
             <image src="{{item}}" class="slide-image" mode="aspectFill"/>  
            </navigator>   
         </swiper-item>  
       </block>  
  </swiper>
+ <!--横线-->
+  <view class='bgText'>
+    <text class='text'>活动列表</text>
+      <view class='bgLine'></view>
+    <view class='line'></view>
+  </view>
 </scroll-view>
 </view>
 
