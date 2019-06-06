@@ -3,6 +3,9 @@
 const app = getApp()
 
 Page({
+  data: {
+    text: "信息发布列表"
+  },
   onReachBottom: function () {
     this.data.pageNum++;
     //this.requestData();
@@ -114,6 +117,14 @@ Page({
   onReachBottom: function () {
 
   },
+
+//获取活动列表页
+  getList:function () {
+    wx.navigateTo({
+      url: '../informationPublishList/informationPublishList'
+    })
+  },
+
   getUserInfo: function(e) {
     console.log(e)
     app.globalData.userInfo = e.detail.userInfo

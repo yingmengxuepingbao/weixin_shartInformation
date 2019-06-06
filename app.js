@@ -15,9 +15,10 @@ App({
         console.log('获取用户登录凭证：' + code);
         if (code ) {
           var appId = 'wxabd856ad2fb9b20d';
-          var secret = '7d58aee4f9345887c336bdff1806cffe';
+          var secret = '987a71db7b51f05fe743558a7b7e84c6';
           wx.request({
-            url: 'https://api.weixin.qq.com/sns/jscode2session?appid=' + appId + '&secret=' + secret + '&js_code=' + code + '&grant_type=authorization_code',
+            //url: 'https://api.weixin.qq.com/sns/jscode2session?appid=' + appId + '&secret=' + secret + '&js_code=' + code + '&grant_type=authorization_code',
+            url:'http://localhost:8080/msgPushUserWxRelationship/login?code='+code,
             data: {},
             header: {
               'content-type': 'json'
@@ -25,8 +26,10 @@ App({
             success: function (res) {
               if (res.statusCode == 200) {
                 console.log(res.statusCode);
-                 console.log("获取到的openid为：" + res.data)
-                var openid = res.data.openid //返回openid
+
+                console.log(res);
+                
+                var openid = res.openid //返回openid
                 console.log("openid = " + openid)
                 // that.globalData.openid = res.data
                 wx.setStorageSync('openid', res.data)
@@ -40,7 +43,7 @@ App({
           console.log('获取用户登录失败：' + res.errMsg);
         }
       }
-    })
+    }),
     // 获取用户信息
     wx.getSetting({
       success: res => {

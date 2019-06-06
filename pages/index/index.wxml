@@ -14,18 +14,13 @@
       </block>  
  </swiper>
  <!--横线-->
-  <view class='bgText'>
-    <text class='text'>活动列表</text>
-      <view class='bgLine'></view>
-    <view class='line'></view>
+ <view class="btn-area">
+  <view class="body-view">
+    <text>信息发布列表</text>
   </view>
+</view>
 </scroll-view>
 </view>
-
-
-
-
-
 
 <view class="container">
   <view class="userinfo">
