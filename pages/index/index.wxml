@@ -1,28 +1,5 @@
 <!--index.wxml-->
-<view class='container' >
-<!--中间主要-->
- <scroll-view scroll-y="true" class='scrollView'>
-<!--轮播图-->
- <swiper indicator-dots="{{indicatorDots}}"  
-        autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">  
-      <block wx:for="{{imgUrls}}">  
-        <swiper-item>  
-           <navigator url='../informationPublishList/informationPublishList' hover-class="navigator-hover">  
-            <image src="{{item}}" class="slide-image" mode="aspectFill"/>  
-           </navigator>   
-        </swiper-item>  
-      </block>  
- </swiper>
- <!--横线-->
- <view class="btn-area">
-  <view class="body-view">
-    <text>信息发布列表</text>
-  </view>
-</view>
-</scroll-view>
-</view>
-
-<view class="container">
+<!--个人信息-->
   <view class="userinfo">
     <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
     <block wx:else>
@@ -30,5 +7,29 @@
       <text class="userinfo-nickname">{{userInfo.nickName}}</text>
     </block>
   </view>
-</view>
+<!--轮播图-->
+<view class='swiper-box' >
+  <swiper indicator-dots="{{indicatorDots}}"  
+          autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" bindchange='swiperChange'>  
+        <block wx:for="{{imgUrls}}">  
+          <swiper-item>  
+              <image src="{{item}}" class="slide-image"/>  
+          </swiper-item>  
+        </block>  
+  </swiper>
+  <view class='dots'>
+    <block wx:for="{{imgUrls}}" wx:key="unique">
+      <view class="dot{{index == swiperCurrent ? 'active' : ''}}" ></view>
+    </block>
+  </view>
 
+  <!--横线-->
+  <view class="btn-area">
+    <view class="body-view">
+      <text>信息发布列表</text>
+      
+    </view>
+  </view>
+</view>
+<view class="container">
+</view>

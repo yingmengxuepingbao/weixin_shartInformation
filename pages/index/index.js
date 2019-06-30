@@ -20,10 +20,11 @@ Page({
    * 页面的初始数据
    */
   data: {
-    indicatorDots: true,
-    autoplay: true,
-    interval: 5000,
-    duration: 1000,
+    indicatorDots: true,//小点是否显示
+    autoplay: true,//是否自动轮播
+    interval: 4000,//时间间隔
+    duration: 800,//滑动时间
+    swiperCurrent:0,
     color: "#D0021B",
     imgUrls: ['../../image/lunbo/1.jpg',
      '../../image/lunbo/2.jpg',
@@ -31,12 +32,22 @@ Page({
     link: '/pages/informationPublishList/informationPublishList',
     pageNum: 0,
     listData: [],
-    imageUrl: [],
+  },
+  swiperChange(e){
+    let current = e.detail.current;
+    //console.log(current,"轮播图");
+    let that = this;
+    that.setData({
+     // swiperCurrent:current,
+      swiperCurrent:e.detail.current
+    })
   },
   //点击轮播图
   swiperTap: function (even) {
+    console.log(this.data.swiperCurrent);
     wx.navigateTo({
-      url: '../informationPublishList/informationPublishList'
+     // url: '../informationPublishList/informationPublishList'
+     url:this.data.swiperCurrent
     })
   },
   //事件处理函数
@@ -124,8 +135,8 @@ Page({
       url: '../informationPublishList/informationPublishList'
     })
   },
-
-  getUserInfo: function(e) {
+  
+  getUserInfo: function (e) {
     console.log(e)
     app.globalData.userInfo = e.detail.userInfo
     this.setData({
